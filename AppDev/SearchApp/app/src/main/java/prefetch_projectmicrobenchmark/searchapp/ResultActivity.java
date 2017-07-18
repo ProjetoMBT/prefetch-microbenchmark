@@ -13,6 +13,7 @@ import org.json.JSONObject;
 
 public class ResultActivity extends AppCompatActivity {
 
+    //<editor-fold desc="Defining the attributes">
     TextView result1; //restaurant_id
     TextView result2; //name
     TextView result3; //cuisine
@@ -20,14 +21,16 @@ public class ResultActivity extends AppCompatActivity {
     TextView result5; //zipcode
     TextView result6; //borough
     Button button_back;
-    String name;
+    String json;
     JSONObject jsonObject;
+    //</editor-fold>
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
+        //<editor-fold desc="Setting up the attributes">
         result1 = (TextView) findViewById(R.id.id_textView_results1);
         result2 = (TextView) findViewById(R.id.id_textView_results2);
         result3 = (TextView) findViewById(R.id.id_textView_results3);
@@ -36,14 +39,15 @@ public class ResultActivity extends AppCompatActivity {
         result6 = (TextView) findViewById(R.id.id_textView_results6);
         button_back = (Button) findViewById(R.id.id_button_back);
 
+        json = getIntent().getStringExtra("json");
+        //</editor-fold>
 
-        name = getIntent().getStringExtra("json");
-
-        if(name != null){
+        //<editor-fold desc="Retrieving the data from JSON">
+        if(json != null){
 
             try {
                 //recebe o JSON vindo da outra INTENT.
-                jsonObject = new JSONObject(name);
+                jsonObject = new JSONObject(json);
 
 
                 //tem que mudar as strings, para restaurant_id, name, cuisine, adress.street, adress.zipcode e borough.
@@ -60,7 +64,9 @@ public class ResultActivity extends AppCompatActivity {
             }
 
         }
+        //</editor-fold>
 
+        //<editor-fold desc="Button to return to MainActivity">
         button_back.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
 
@@ -69,6 +75,7 @@ public class ResultActivity extends AppCompatActivity {
 
             }
         });
+        //</editor-fold>
 
     }
 }

@@ -19,5 +19,9 @@
     <string name="search_two_fields">Search by Name and Adress</string>
     <string name="search_one_field">Search by ID</string>
     <string name="search">Search</string>
+    <string name="restaurant_1">restaurant_1</string>
+    <string name="restaurant_2">restaurant_2</string>
+    <string name="restaurant_3">restaurant_3</string>
+    <string name="restaurant_4">restaurant_4</string>
 
 </resources>

@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
@@ -8,13 +13,16 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     tools:context="prefetch_projectmicrobenchmark.searchapp.MainActivity">
 
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#94b1ff"
-    android:id="@+id/id_relativelayout1">
+    android:id="@+id/id_relativelayout1"
+    >
 
     <TextView
         android:text="@string/search_two_fields"
@@ -112,4 +120,56 @@
 
     </RelativeLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#94b1ff"
+        android:id="@+id/id_relativelayout3"
+        android:layout_below="@+id/id_relativelayout2"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:text="Fav Restaurants"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/id_textview3"
+            android:textSize="20sp"
+            android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:text="@string/restaurant_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id_textview3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:id="@+id/id_button4" />
+
+    <Button
+        android:text="@string/restaurant_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id_button4"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/id_button5" />
+
+    <Button
+        android:text="@string/restaurant_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id_button5"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/id_button6" />
+
+    <Button
+        android:text="@string/restaurant_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id_button6"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/id_button7" />
+    </RelativeLayout>
+
 </RelativeLayout>
+
+</ScrollView>
