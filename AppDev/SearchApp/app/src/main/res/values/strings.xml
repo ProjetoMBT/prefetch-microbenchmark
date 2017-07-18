@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">SearchApp</string>
+    <string name="field_1">Name</string>
+    <string name="field_2">Street</string>
+    <string name="field_3">Restaurant ID</string>
+    <string name="results">Results</string>
+    <string name="back">Back</string>
+    <string name="info_6">Borough: </string>
+    <string name="info_5">Zipcode: </string>
+    <string name="info_4">Street: </string>
+    <string name="info_3">Cuisine: </string>
+    <string name="info_2">Name: </string>
+    <string name="info_1">ID: </string>
+    <string name="result_1">Restaurant ID not found</string>
+    <string name="result_2">Name not found</string>
+    <string name="result_3">Cuisine not found</string>
+    <string name="result_4">Street not found</string>
+    <string name="result_5">Zipcode not found</string>
+    <string name="search_two_fields">Search by Name and Adress</string>
+    <string name="search_one_field">Search by ID</string>
+    <string name="search">Search</string>
+
+</resources>
