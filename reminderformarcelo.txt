@@ -1,0 +1,17 @@
+CHECK 1: always returns the same thing
+
+CHECK 2: IDoption2 is unavailable, with lock-in
+CHECK 3: IDoption2 is unavailable, no lock-in
+CHECK 4: IDoption1 and IDoption2 are available, lock-in uses only one of them
+CHECK 5: IDoption1 and IDoption2 are available, lock-in uses first but onClick uses second
+CHECK 6: IDoption1 and IDoption2 are available, no lock-in
+
+7: name and address must be locked-in
+8: name is locked in, address is acquired onClick
+9: no lock-in
+10: address2 is available, but which is used is chosen at random by lock-in
+11: address2 is available, but which is used is chosen at random by onClick
+12: address2 is available, and is used by onClick if filled, otherwise lock-in uses address1
+13: address2 is available, chosen at random by lock-in, but name is picked in onClick
+14: address2 is used if available, name is used by onClick
+15: name is locked-in, address is chosen at random by onClick
