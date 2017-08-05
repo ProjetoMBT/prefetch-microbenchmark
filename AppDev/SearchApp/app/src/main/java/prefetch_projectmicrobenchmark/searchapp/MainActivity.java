@@ -26,8 +26,10 @@ public class MainActivity extends AppCompatActivity {
     EditText field1;
     EditText field2;
     EditText field3;
+    Button buttonSearchId1;
+    Button buttonSearchId2;
+    Button buttonSearchId3;
     Button button1;
-    Button button2;
     Button button7;
     Button button4;
     Button button5;
@@ -61,8 +63,10 @@ public class MainActivity extends AppCompatActivity {
         field2 = (EditText) findViewById(R.id.id_field2);
         field3 = (EditText) findViewById(R.id.id_field3);
 
+        buttonSearchId1 = (Button) findViewById(R.id.id_button_searchID_1);
+        buttonSearchId2 = (Button) findViewById(R.id.id_button_searchID_2);
+        buttonSearchId3 = (Button) findViewById(R.id.id_button_searchID_3);
         button1 = (Button) findViewById(R.id.id_button1);
-        button2 = (Button) findViewById(R.id.id_button2);
         button7 = (Button) findViewById(R.id.id_button7);
         button4 = (Button) findViewById(R.id.id_button4);
         button5 = (Button) findViewById(R.id.id_button5);
@@ -93,13 +97,46 @@ public class MainActivity extends AppCompatActivity {
         //</editor-fold>
 
 
-        //<editor-fold desc="Button to search with 1 parameter, ID">
-        button2.setOnClickListener(new View.OnClickListener() {
+        //<editor-fold desc="First search with 1 parameter, ID">
+        buttonSearchId1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
 
                 id = field3.getText().toString();
 
                 urlJson = idURL+id+apiKey;
+
+
+                try {
+                    url = new URL(urlJson);
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                }
+                search = new Search();
+                search.execute(url);
+
+            }
+        });
+        //</editor-fold>
+
+        //<editor-fold desc="Second search with 1 parameter, ID">
+        buttonSearchId2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+
+                id = field3.getText().toString();
+
+                secondSearch(id);
+
+
+
+            }
+        });
+        //</editor-fold>
+
+        //<editor-fold desc="Third search with 1 parameter, ID">
+        buttonSearchId3.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+
+                urlJson = idURL+getID()+apiKey;
 
 
                 try {
@@ -225,5 +262,25 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     //</editor-fold>
+
+    public String getID(){
+        return field3.getText().toString();
+    }
+
+    public void secondSearch(String id){
+
+        urlJson = idURL+id+apiKey;
+
+
+        try {
+            url = new URL(urlJson);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        search = new Search();
+        search.execute(url);
+
+
+    }
 
 }

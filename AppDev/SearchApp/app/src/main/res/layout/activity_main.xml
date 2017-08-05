@@ -110,13 +110,31 @@
 
 
         <Button
-            android:text="@string/search"
+            android:text="Search 2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/id_TIL_field3"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="5dp"
-            android:id="@+id/id_button2" />
+            android:id="@+id/id_button_searchID_2" />
+
+        <Button
+            android:text="Search 1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/id_TIL_field3"
+            android:layout_toLeftOf="@+id/id_button_searchID_2"
+            android:layout_marginTop="5dp"
+            android:id="@+id/id_button_searchID_1" />
+
+        <Button
+            android:text="Search 3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/id_TIL_field3"
+            android:layout_toRightOf="@+id/id_button_searchID_2"
+            android:layout_marginTop="5dp"
+            android:id="@+id/id_button_searchID_3" />
 
     </RelativeLayout>
 
