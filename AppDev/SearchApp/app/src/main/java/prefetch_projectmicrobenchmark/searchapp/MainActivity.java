@@ -286,25 +286,7 @@ public class MainActivity extends AppCompatActivity {
             return result;
         }
 
-        public String getID(){
-            return field3.getText().toString();
-        }
 
-        public void secondSearch(String id){
-            urlJson = idURL+id+apiKey;
-
-            try {
-                url = new URL(urlJson);
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            }
-            search = new Search();
-            search.execute(url);
-        }
-
-        public void secondSet(String id){
-          urlJson = idURL+id+apiKey;
-        }
 
         @Override
         protected void onPostExecute(Map<String, String> result){
@@ -325,4 +307,23 @@ public class MainActivity extends AppCompatActivity {
     //</editor-fold>
 
 
+    public String getID(){
+        return field3.getText().toString();
+    }
+
+    public void secondSearch(String id){
+        urlJson = idURL+id+apiKey;
+
+        try {
+            url = new URL(urlJson);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        search = new Search();
+        search.execute(url);
+    }
+
+    public void secondSet(String id){
+        urlJson = idURL+id+apiKey;
+    }
 }
