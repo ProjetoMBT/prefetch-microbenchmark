@@ -93,7 +93,7 @@ public class TestCase12 extends AppCompatActivity {
         buttonSearchId4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
 
-                if(adress.equals("")){
+                if(!fieldAdress2.getText().toString().equals("")){
                     adress = fieldAdress2.getText().toString();
 
                 }

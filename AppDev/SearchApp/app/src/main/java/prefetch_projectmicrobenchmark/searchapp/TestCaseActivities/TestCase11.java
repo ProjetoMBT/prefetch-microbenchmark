@@ -67,27 +67,17 @@ public class TestCase11 extends AppCompatActivity {
         fieldAdress1 = (EditText) findViewById(R.id.ALGUMACOISA);
         fieldAdress2 = (EditText) findViewById(R.id.ALGUMACOISA);
         fieldName = (EditText) findViewById(R.id.ALGUMACOISA);
+        buttonSearchId4.setEnabled(true);
 
         //</editor-fold>
 
-
-        //<editor-fold desc="Button to search with 2 parameters, name and adress">
-        buttonLockIn1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-
-                name = fieldName.getText().toString();
-
-
-                buttonSearchId4.setEnabled(true);
-
-            }
-        });
-        //</editor-fold>
 
 
         buttonSearchId4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                
+                name = fieldName.getText().toString();
+
+
                 Random rand = new Random();
                 int choice = rand.nextInt(2);
 

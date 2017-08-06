@@ -93,7 +93,7 @@ public class TestCase14 extends AppCompatActivity {
                 name = fieldName.getText().toString();
 
 
-                if(adress.equals("")){
+                if(!fieldAdress2.getText().toString().equals("")){
                     adress = fieldAdress2.getText().toString();
 
                 }
