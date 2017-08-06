@@ -74,7 +74,6 @@ public class TestCase10 extends AppCompatActivity {
             public void onClick(View view) {
 
                 name = fieldName.getText().toString();
-                adress = fieldAdress1.getText().toString();
 
                 Random rand = new Random();
                 int choice = rand.nextInt(2);
@@ -103,6 +102,21 @@ public class TestCase10 extends AppCompatActivity {
         //</editor-fold>
 
 
+        buttonSearchId4.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+
+
+                try {
+                    url = new URL(urlJson);
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                }
+                search = new Search();
+                search.execute(url);
+
+                buttonSearchId4.setEnabled(false);
+            }
+        });
 
     }
 
