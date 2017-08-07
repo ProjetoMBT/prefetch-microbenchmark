@@ -1,4 +1,4 @@
-package prefetch_projectmicrobenchmark.searchapp;
+package prefetch_projectmicrobenchmark.searchapp.TestCaseActivities;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -20,6 +20,9 @@ import java.net.URLConnection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
+
+import prefetch_projectmicrobenchmark.searchapp.R;
+import prefetch_projectmicrobenchmark.searchapp.ResultActivity;
 
 public class TestCase5 extends AppCompatActivity {
 
@@ -43,7 +46,7 @@ public class TestCase5 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_test_case5);
 
         //<editor-fold desc="Setting up the attributes">
         intent = new Intent(this, ResultActivity.class);
@@ -52,38 +55,37 @@ public class TestCase5 extends AppCompatActivity {
         idURL = "http://api.openweathermap.org/data/2.5/weather?units=Imperial&id=";  //provisório
         apiKey = "&APPID=f46f62442611cdc087b629f6e87c7374";                           //provisório
 
-        field3 = (EditText) findViewById(R.id.id_field3);
+       /* field3 = (EditText) findViewById(R.id.id_field3);
         field4 = (EditText) findViewById(R.id.id_field4);
-
         buttonLockIn1 = (Button) findViewById(R.id.id_button_lockIn_1);
-        buttonSearchId4 = (Button) findViewById(R.id.id_button_searchID_4);
+        buttonSearchId4 = (Button) findViewById(R.id.id_button_searchID_4);*/
         //</editor-fold>
 
         buttonLockIn1.setOnClickListener(new View.OnClickListener() {
-          public void onClick(View view) {
-            id = field3.getText().toString();
+            public void onClick(View view) {
+                id = field3.getText().toString();
 
-            urlJson = idURL + id + apiKey;
-          }
+                urlJson = idURL + id + apiKey;
+            }
         });
 
         buttonSearchId4.setOnClickListener(new View.OnClickListener() {
-          public void onClick(View view) {
-            if(!field4.getText().toString().equals(""))
-            {
-              id = field4.getText().toString();
+            public void onClick(View view) {
+                if(!field4.getText().toString().equals(""))
+                {
+                    id = field4.getText().toString();
 
-              urlJson = idURL + id + apiKey;
-            }
+                    urlJson = idURL + id + apiKey;
+                }
 
-            try {
-                url = new URL(urlJson);
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
+                try {
+                    url = new URL(urlJson);
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                }
+                search = new Search();
+                search.execute(url);
             }
-            search = new Search();
-            search.execute(url);
-          }
         });
     }
 
@@ -92,30 +94,30 @@ public class TestCase5 extends AppCompatActivity {
         @Override
         protected Map<String, String> doInBackground(URL... urlPar){
             Map<String, String> result = new HashMap<String, String>();
-                URL url = urlPar[0];
-                if(url != null){
-                    Log.e("url", url.toString());
-                    try {
-                        URLConnection urlConnection = url.openConnection();
-                        InputStream inputStream = new BufferedInputStream(urlConnection.getInputStream());
-                        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-                        StringBuilder outString = new StringBuilder();
-                        String line;
-                        while((line = bufferedReader.readLine()) != null){
-                            outString.append(line);
-                        }
-                        inputStream.close();
-
-                        result.put("json", outString.toString().trim());
-                        Log.e("json", result.get("json"));
-
-
-
-                    } catch (IOException e) {
-                        e.printStackTrace();
+            URL url = urlPar[0];
+            if(url != null){
+                Log.e("url", url.toString());
+                try {
+                    URLConnection urlConnection = url.openConnection();
+                    InputStream inputStream = new BufferedInputStream(urlConnection.getInputStream());
+                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+                    StringBuilder outString = new StringBuilder();
+                    String line;
+                    while((line = bufferedReader.readLine()) != null){
+                        outString.append(line);
                     }
+                    inputStream.close();
 
+                    result.put("json", outString.toString().trim());
+                    Log.e("json", result.get("json"));
+
+
+
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
+
+            }
 
             return result;
         }

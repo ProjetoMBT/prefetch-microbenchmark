@@ -1,4 +1,4 @@
-package prefetch_projectmicrobenchmark.searchapp;
+package prefetch_projectmicrobenchmark.searchapp.TestCaseActivities;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -19,6 +19,9 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.HashMap;
 import java.util.Map;
+
+import prefetch_projectmicrobenchmark.searchapp.R;
+import prefetch_projectmicrobenchmark.searchapp.ResultActivity;
 
 public class TestCase2 extends AppCompatActivity {
 
@@ -42,7 +45,7 @@ public class TestCase2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_test_case2);
 
         //<editor-fold desc="Setting up the attributes">
         intent = new Intent(this, ResultActivity.class);
@@ -51,53 +54,53 @@ public class TestCase2 extends AppCompatActivity {
         idURL = "http://api.openweathermap.org/data/2.5/weather?units=Imperial&id=";  //provisório
         apiKey = "&APPID=f46f62442611cdc087b629f6e87c7374";                           //provisório
 
-        field3 = (EditText) findViewById(R.id.id_field3);
-
+        /*field3 = (EditText) findViewById(R.id.id_field3);
         buttonLockIn1 = (Button) findViewById(R.id.id_button_lockIn_1);
         buttonLockIn2 = (Button) findViewById(R.id.id_button_lockIn_2);
         buttonLockIn3 = (Button) findViewById(R.id.id_button_lockIn_3);
-        buttonSearchId4 = (Button) findViewById(R.id.id_button_searchID_4);
+        buttonSearchId4 = (Button) findViewById(R.id.id_button_searchID_4);*/
+
         //</editor-fold>
 
         buttonLockIn1.setOnClickListener(new View.OnClickListener() {
-          public void onClick(View view) {
-            id = field3.getText().toString();
+            public void onClick(View view) {
+                id = field3.getText().toString();
 
-            urlJson = idURL + id + apiKey;
+                urlJson = idURL + id + apiKey;
 
-            buttonSearchId4.setEnabled(true);
-          }
+                buttonSearchId4.setEnabled(true);
+            }
         });
 
         buttonLockIn2.setOnClickListener(new View.OnClickListener() {
-          public void onClick(View view) {
-            id = field3.getText().toString();
-            secondSet(id);
+            public void onClick(View view) {
+                id = field3.getText().toString();
+                secondSet(id);
 
-            buttonSearchId4.setEnabled(true);
-          }
+                buttonSearchId4.setEnabled(true);
+            }
         });
 
         buttonLockIn3.setOnClickListener(new View.OnClickListener() {
-          public void onClick(View view) {
-            urlJson = idURL+getID()+apiKey;
+            public void onClick(View view) {
+                urlJson = idURL+getID()+apiKey;
 
-            buttonSearchId4.setEnabled(true);
-          }
+                buttonSearchId4.setEnabled(true);
+            }
         });
 
         buttonSearchId4.setOnClickListener(new View.OnClickListener() {
-          public void onClick(View view) {
-            try {
-                url = new URL(urlJson);
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            }
-            search = new Search();
-            search.execute(url);
+            public void onClick(View view) {
+                try {
+                    url = new URL(urlJson);
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                }
+                search = new Search();
+                search.execute(url);
 
-            buttonSearchId4.setEnabled(false);
-          }
+                buttonSearchId4.setEnabled(false);
+            }
         });
     }
 
@@ -106,41 +109,34 @@ public class TestCase2 extends AppCompatActivity {
         @Override
         protected Map<String, String> doInBackground(URL... urlPar){
             Map<String, String> result = new HashMap<String, String>();
-                URL url = urlPar[0];
-                if(url != null){
-                    Log.e("url", url.toString());
-                    try {
-                        URLConnection urlConnection = url.openConnection();
-                        InputStream inputStream = new BufferedInputStream(urlConnection.getInputStream());
-                        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-                        StringBuilder outString = new StringBuilder();
-                        String line;
-                        while((line = bufferedReader.readLine()) != null){
-                            outString.append(line);
-                        }
-                        inputStream.close();
-
-                        result.put("json", outString.toString().trim());
-                        Log.e("json", result.get("json"));
-
-
-
-                    } catch (IOException e) {
-                        e.printStackTrace();
+            URL url = urlPar[0];
+            if(url != null){
+                Log.e("url", url.toString());
+                try {
+                    URLConnection urlConnection = url.openConnection();
+                    InputStream inputStream = new BufferedInputStream(urlConnection.getInputStream());
+                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+                    StringBuilder outString = new StringBuilder();
+                    String line;
+                    while((line = bufferedReader.readLine()) != null){
+                        outString.append(line);
                     }
+                    inputStream.close();
 
+                    result.put("json", outString.toString().trim());
+                    Log.e("json", result.get("json"));
+
+
+
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
+
+            }
 
             return result;
         }
 
-        public String getID(){
-            return field3.getText().toString();
-        }
-
-        public void secondSet(String id){
-          urlJson = idURL+id+apiKey;
-        }
 
         @Override
         protected void onPostExecute(Map<String, String> result){
@@ -159,6 +155,14 @@ public class TestCase2 extends AppCompatActivity {
         }
     }
     //</editor-fold>
+
+    public String getID(){
+        return field3.getText().toString();
+    }
+
+    public void secondSet(String id){
+        urlJson = idURL+id+apiKey;
+    }
 
 
 }

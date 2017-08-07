@@ -20,173 +20,21 @@
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#94b1ff"
     android:id="@+id/id_relativelayout1"
     >
 
-    <TextView
-        android:text="@string/search_two_fields"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/id_textview1"
-        android:textSize="20sp"
-        android:layout_centerHorizontal="true"/>
 
-    <android.support.design.widget.TextInputLayout
+
+    <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/id_textview1"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="5dp"
-        android:orientation="horizontal"
-        android:id="@+id/id_TIL_field1">
+        android:id="@+id/spinner" />
 
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/field_1"
-            android:id="@+id/id_field1"/>
-    </android.support.design.widget.TextInputLayout>
 
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/id_TIL_field1"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="5dp"
-        android:id="@+id/id_TIL_field2">
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/field_2"
-            android:id="@+id/id_field2"/>
-    </android.support.design.widget.TextInputLayout>
-
-    <Button
-        android:text="@string/search"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/id_TIL_field2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
-        android:id="@+id/id_button1" />
 
 </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#94b1ff"
-        android:id="@+id/id_relativelayout2"
-        android:layout_below="@+id/id_relativelayout1"
-        android:layout_marginTop="5dp">
-
-        <TextView
-            android:text="@string/search_one_field"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/id_textview2"
-            android:textSize="20sp"
-            android:layout_centerHorizontal="true"/>
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/id_textview2"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="5dp"
-            android:orientation="horizontal"
-            android:id="@+id/id_TIL_field3">
-
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/field_3"
-                android:id="@+id/id_field3"/>
-        </android.support.design.widget.TextInputLayout>
-
-
-        <Button
-            android:text="Search 2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/id_TIL_field3"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="5dp"
-            android:id="@+id/id_button_searchID_2" />
-
-        <Button
-            android:text="Search 1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/id_TIL_field3"
-            android:layout_toLeftOf="@+id/id_button_searchID_2"
-            android:layout_marginTop="5dp"
-            android:id="@+id/id_button_searchID_1" />
-
-        <Button
-            android:text="Search 3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/id_TIL_field3"
-            android:layout_toRightOf="@+id/id_button_searchID_2"
-            android:layout_marginTop="5dp"
-            android:id="@+id/id_button_searchID_3" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#94b1ff"
-        android:id="@+id/id_relativelayout3"
-        android:layout_below="@+id/id_relativelayout2"
-        android:layout_marginTop="5dp">
-
-        <TextView
-            android:text="Fav Restaurants"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/id_textview3"
-            android:textSize="20sp"
-            android:layout_centerHorizontal="true"/>
-
-    <Button
-        android:text="@string/restaurant_1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/id_textview3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
-        android:id="@+id/id_button4" />
-
-    <Button
-        android:text="@string/restaurant_2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/id_button4"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/id_button5" />
-
-    <Button
-        android:text="@string/restaurant_3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/id_button5"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/id_button6" />
-
-    <Button
-        android:text="@string/restaurant_4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/id_button6"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/id_button7" />
-    </RelativeLayout>
 
 </RelativeLayout>
 

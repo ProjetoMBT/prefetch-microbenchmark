@@ -1,4 +1,4 @@
-package prefetch_projectmicrobenchmark.searchapp;
+package prefetch_projectmicrobenchmark.searchapp.TestCaseActivities;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -19,6 +19,9 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.HashMap;
 import java.util.Map;
+
+import prefetch_projectmicrobenchmark.searchapp.R;
+import prefetch_projectmicrobenchmark.searchapp.ResultActivity;
 
 public class TestCase3 extends AppCompatActivity {
 
@@ -42,7 +45,7 @@ public class TestCase3 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_test_case3);
 
         //<editor-fold desc="Setting up the attributes">
         intent = new Intent(this, ResultActivity.class);
@@ -51,11 +54,11 @@ public class TestCase3 extends AppCompatActivity {
         idURL = "http://api.openweathermap.org/data/2.5/weather?units=Imperial&id=";  //provisório
         apiKey = "&APPID=f46f62442611cdc087b629f6e87c7374";                           //provisório
 
-        field3 = (EditText) findViewById(R.id.id_field3);
-
+        /*field3 = (EditText) findViewById(R.id.id_field3);
         buttonSearchId1 = (Button) findViewById(R.id.id_button_searchID_1);
         buttonSearchId2 = (Button) findViewById(R.id.id_button_searchID_2);
-        buttonSearchId3 = (Button) findViewById(R.id.id_button_searchID_3);
+        buttonSearchId3 = (Button) findViewById(R.id.id_button_searchID_3);*/
+
         //</editor-fold>
 
         //<editor-fold desc="First search with 1 parameter, ID">
@@ -108,49 +111,35 @@ public class TestCase3 extends AppCompatActivity {
         @Override
         protected Map<String, String> doInBackground(URL... urlPar){
             Map<String, String> result = new HashMap<String, String>();
-                URL url = urlPar[0];
-                if(url != null){
-                    Log.e("url", url.toString());
-                    try {
-                        URLConnection urlConnection = url.openConnection();
-                        InputStream inputStream = new BufferedInputStream(urlConnection.getInputStream());
-                        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-                        StringBuilder outString = new StringBuilder();
-                        String line;
-                        while((line = bufferedReader.readLine()) != null){
-                            outString.append(line);
-                        }
-                        inputStream.close();
-
-                        result.put("json", outString.toString().trim());
-                        Log.e("json", result.get("json"));
-
-
-
-                    } catch (IOException e) {
-                        e.printStackTrace();
+            URL url = urlPar[0];
+            if(url != null){
+                Log.e("url", url.toString());
+                try {
+                    URLConnection urlConnection = url.openConnection();
+                    InputStream inputStream = new BufferedInputStream(urlConnection.getInputStream());
+                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+                    StringBuilder outString = new StringBuilder();
+                    String line;
+                    while((line = bufferedReader.readLine()) != null){
+                        outString.append(line);
                     }
+                    inputStream.close();
 
+                    result.put("json", outString.toString().trim());
+                    Log.e("json", result.get("json"));
+
+
+
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
+
+            }
 
             return result;
         }
 
-        public String getID(){
-            return field3.getText().toString();
-        }
 
-        public void secondSearch(String id){
-            urlJson = idURL+id+apiKey;
-
-            try {
-                url = new URL(urlJson);
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            }
-            search = new Search();
-            search.execute(url);
-        }
 
         @Override
         protected void onPostExecute(Map<String, String> result){
@@ -170,5 +159,20 @@ public class TestCase3 extends AppCompatActivity {
     }
     //</editor-fold>
 
+    public String getID(){
+        return field3.getText().toString();
+    }
+
+    public void secondSearch(String id){
+        urlJson = idURL+id+apiKey;
+
+        try {
+            url = new URL(urlJson);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        search = new Search();
+        search.execute(url);
+    }
 
 }

@@ -28,7 +28,13 @@
         <activity android:name=".TestCaseActivities.TestCase12" />
         <activity android:name=".TestCaseActivities.TestCase13" />
         <activity android:name=".TestCaseActivities.TestCase14" />
-        <activity android:name=".TestCaseActivities.TestCase15"></activity>
+        <activity android:name=".TestCaseActivities.TestCase15" />
+        <activity android:name=".TestCaseActivities.TestCase1" />
+        <activity android:name=".TestCaseActivities.TestCase2" />
+        <activity android:name=".TestCaseActivities.TestCase3" />
+        <activity android:name=".TestCaseActivities.TestCase4" />
+        <activity android:name=".TestCaseActivities.TestCase5" />
+        <activity android:name=".TestCaseActivities.TestCase6"></activity>
     </application>
 
 </manifest>

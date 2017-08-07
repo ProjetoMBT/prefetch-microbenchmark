@@ -1,4 +1,4 @@
-package prefetch_projectmicrobenchmark.searchapp;
+package prefetch_projectmicrobenchmark.searchapp.TestCaseActivities;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -19,6 +19,9 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.HashMap;
 import java.util.Map;
+
+import prefetch_projectmicrobenchmark.searchapp.R;
+import prefetch_projectmicrobenchmark.searchapp.ResultActivity;
 
 public class TestCase1 extends AppCompatActivity {
 
@@ -46,7 +49,7 @@ public class TestCase1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_test_case1);
 
         //<editor-fold desc="Setting up the attributes">
         intent = new Intent(this, ResultActivity.class);
@@ -55,14 +58,14 @@ public class TestCase1 extends AppCompatActivity {
         idURL = "http://api.openweathermap.org/data/2.5/weather?units=Imperial&id=";  //provisório
         apiKey = "&APPID=f46f62442611cdc087b629f6e87c7374";                           //provisório
 
-        field1 = (EditText) findViewById(R.id.id_field1);
+        /*field1 = (EditText) findViewById(R.id.id_field1);
         field2 = (EditText) findViewById(R.id.id_field2);
         field3 = (EditText) findViewById(R.id.id_field3);
 
         button7 = (Button) findViewById(R.id.id_button7);
         button4 = (Button) findViewById(R.id.id_button4);
         button5 = (Button) findViewById(R.id.id_button5);
-        button6 = (Button) findViewById(R.id.id_button6);
+        button6 = (Button) findViewById(R.id.id_button6);*/
         //</editor-fold>
 
         //<editor-fold desc="Sequence of 4 buttons to search with static URL">
@@ -123,30 +126,30 @@ public class TestCase1 extends AppCompatActivity {
         @Override
         protected Map<String, String> doInBackground(URL... urlPar){
             Map<String, String> result = new HashMap<String, String>();
-                URL url = urlPar[0];
-                if(url != null){
-                    Log.e("url", url.toString());
-                    try {
-                        URLConnection urlConnection = url.openConnection();
-                        InputStream inputStream = new BufferedInputStream(urlConnection.getInputStream());
-                        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-                        StringBuilder outString = new StringBuilder();
-                        String line;
-                        while((line = bufferedReader.readLine()) != null){
-                            outString.append(line);
-                        }
-                        inputStream.close();
-
-                        result.put("json", outString.toString().trim());
-                        Log.e("json", result.get("json"));
-
-
-
-                    } catch (IOException e) {
-                        e.printStackTrace();
+            URL url = urlPar[0];
+            if(url != null){
+                Log.e("url", url.toString());
+                try {
+                    URLConnection urlConnection = url.openConnection();
+                    InputStream inputStream = new BufferedInputStream(urlConnection.getInputStream());
+                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+                    StringBuilder outString = new StringBuilder();
+                    String line;
+                    while((line = bufferedReader.readLine()) != null){
+                        outString.append(line);
                     }
+                    inputStream.close();
 
+                    result.put("json", outString.toString().trim());
+                    Log.e("json", result.get("json"));
+
+
+
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
+
+            }
 
             return result;
         }

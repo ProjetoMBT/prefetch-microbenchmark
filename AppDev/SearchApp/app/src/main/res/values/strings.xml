@@ -24,4 +24,23 @@
     <string name="restaurant_3">restaurant_3</string>
     <string name="restaurant_4">restaurant_4</string>
 
+    <string-array name="testcases_array">
+        <item>Select a Test Case</item>
+        <item>Test Case 1</item>
+        <item>Test Case 2</item>
+        <item>Test Case 3</item>
+        <item>Test Case 4</item>
+        <item>Test Case 5</item>
+        <item>Test Case 6</item>
+        <item>Test Case 7</item>
+        <item>Test Case 8</item>
+        <item>Test Case 9</item>
+        <item>Test Case 10</item>
+        <item>Test Case 11</item>
+        <item>Test Case 12</item>
+        <item>Test Case 13</item>
+        <item>Test Case 14</item>
+        <item>Test Case 15</item>
+
+    </string-array>
 </resources>
