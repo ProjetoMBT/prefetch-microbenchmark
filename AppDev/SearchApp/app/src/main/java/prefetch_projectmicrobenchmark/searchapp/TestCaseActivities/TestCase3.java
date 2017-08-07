@@ -54,10 +54,10 @@ public class TestCase3 extends AppCompatActivity {
         idURL = "http://api.openweathermap.org/data/2.5/weather?units=Imperial&id=";  //provisório
         apiKey = "&APPID=f46f62442611cdc087b629f6e87c7374";                           //provisório
 
-        /*field3 = (EditText) findViewById(R.id.id_field3);
-        buttonSearchId1 = (Button) findViewById(R.id.id_button_searchID_1);
-        buttonSearchId2 = (Button) findViewById(R.id.id_button_searchID_2);
-        buttonSearchId3 = (Button) findViewById(R.id.id_button_searchID_3);*/
+        field3 = (EditText) findViewById(R.id.id_fieldID);
+        buttonSearchId1 = (Button) findViewById(R.id.id_button_search1);
+        buttonSearchId2 = (Button) findViewById(R.id.id_button_search2);
+        buttonSearchId3 = (Button) findViewById(R.id.id_button_search3);
 
         //</editor-fold>
 

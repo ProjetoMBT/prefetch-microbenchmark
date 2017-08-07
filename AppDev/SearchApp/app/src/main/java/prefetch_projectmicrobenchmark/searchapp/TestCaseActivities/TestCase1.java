@@ -26,16 +26,12 @@ import prefetch_projectmicrobenchmark.searchapp.ResultActivity;
 public class TestCase1 extends AppCompatActivity {
 
     //<editor-fold desc="Defining the attributes">
-    EditText field1;
-    EditText field2;
-    EditText field3;
+
     Button button7;
     Button button4;
     Button button5;
     Button button6;
     String id;
-    String name;
-    String adress;
     String nameURL;
     String idURL;
     String apiKey;
@@ -58,14 +54,11 @@ public class TestCase1 extends AppCompatActivity {
         idURL = "http://api.openweathermap.org/data/2.5/weather?units=Imperial&id=";  //provisório
         apiKey = "&APPID=f46f62442611cdc087b629f6e87c7374";                           //provisório
 
-        /*field1 = (EditText) findViewById(R.id.id_field1);
-        field2 = (EditText) findViewById(R.id.id_field2);
-        field3 = (EditText) findViewById(R.id.id_field3);
 
-        button7 = (Button) findViewById(R.id.id_button7);
-        button4 = (Button) findViewById(R.id.id_button4);
-        button5 = (Button) findViewById(R.id.id_button5);
-        button6 = (Button) findViewById(R.id.id_button6);*/
+        button4 = (Button) findViewById(R.id.id_button_search1);
+        button5 = (Button) findViewById(R.id.id_button_search2);
+        button6 = (Button) findViewById(R.id.id_button_search3);
+        button7 = (Button) findViewById(R.id.id_button_search4);
         //</editor-fold>
 
         //<editor-fold desc="Sequence of 4 buttons to search with static URL">
@@ -84,7 +77,7 @@ public class TestCase1 extends AppCompatActivity {
         button5.setOnClickListener(new View.OnClickListener() { //Static button 2
             public void onClick(View view) {
                 try {
-                    url = new URL(nameURL+"paris"+apiKey);
+                    url = new URL(nameURL+"london"+apiKey);
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 }
@@ -96,7 +89,7 @@ public class TestCase1 extends AppCompatActivity {
         button6.setOnClickListener(new View.OnClickListener() { //Static button 3
             public void onClick(View view) {
                 try {
-                    url = new URL(nameURL+"paris"+apiKey);
+                    url = new URL(nameURL+"berlin"+apiKey);
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 }
@@ -108,7 +101,7 @@ public class TestCase1 extends AppCompatActivity {
         button7.setOnClickListener(new View.OnClickListener() { //Static button 4
             public void onClick(View view) {
                 try {
-                    url = new URL(nameURL+"paris"+apiKey);
+                    url = new URL(nameURL+"roma"+apiKey);
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 }

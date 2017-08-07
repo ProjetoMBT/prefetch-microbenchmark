@@ -1,13 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_test_case3"
+    android:id="@+id/activity_test_case2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="prefetch_projectmicrobenchmark.searchapp.TestCaseActivities.TestCase3">
+    tools:context="prefetch_projectmicrobenchmark.searchapp.TestCaseActivities.TestCase2">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:id="@+id/id_TIL_field1">
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Insert ID"
+                android:id="@+id/id_fieldID"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search 2"
+            android:layout_below="@+id/id_TIL_field1"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/id_button_search2"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search 1"
+            android:layout_below="@+id/id_TIL_field1"
+            android:layout_toLeftOf="@+id/id_button_search2"
+            android:id="@+id/id_button_search1"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search 3"
+            android:layout_toRightOf="@+id/id_button_search2"
+            android:layout_below="@+id/id_TIL_field1"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/id_button_search3"
+            />
+
+
+
+
+    </RelativeLayout>
 
 </RelativeLayout>

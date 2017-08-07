@@ -10,4 +10,65 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="prefetch_projectmicrobenchmark.searchapp.TestCaseActivities.TestCase2">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:id="@+id/id_TIL_field1">
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Insert ID"
+                android:id="@+id/id_fieldID"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lock in 2"
+            android:layout_below="@+id/id_TIL_field1"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/id_button_lockin2"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lock in 1"
+            android:layout_below="@+id/id_TIL_field1"
+            android:layout_toLeftOf="@+id/id_button_lockin2"
+            android:id="@+id/id_button_lockin1"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lock in 3"
+            android:layout_toRightOf="@+id/id_button_lockin2"
+            android:layout_below="@+id/id_TIL_field1"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/id_button_lockin3"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            android:layout_below="@+id/id_button_lockin2"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/id_button_search"
+            />
+
+
+    </RelativeLayout>
+
 </RelativeLayout>

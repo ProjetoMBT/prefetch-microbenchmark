@@ -57,12 +57,14 @@ public class TestCase7 extends AppCompatActivity {
         apiKey = "&APPID=f46f62442611cdc087b629f6e87c7374";                           //provisório
 
 
-        /*buttonLockIn1 = (Button) findViewById(R.id.id_button_searchID_1);
-        buttonLockIn2 = (Button) findViewById(R.id.id_button_searchID_2);
-        buttonLockIn3 = (Button) findViewById(R.id.id_button_searchID_3);
-        buttonSearchId4 = (Button) findViewById(R.id.id_button_searchID_3);
-        fieldAdress = (EditText) findViewById(R.id.ALGUMACOISA);
-        fieldName = (EditText) findViewById(R.id.ALGUMACOISA);*/
+        buttonLockIn1 = (Button) findViewById(R.id.id_button_lockin1);
+        buttonLockIn2 = (Button) findViewById(R.id.id_button_lockin2);
+        buttonLockIn3 = (Button) findViewById(R.id.id_button_lockin3);
+        buttonSearchId4 = (Button) findViewById(R.id.id_button_search);
+        fieldAdress = (EditText) findViewById(R.id.id_field_name);
+        fieldName = (EditText) findViewById(R.id.id_field_adress);
+        buttonSearchId4.setEnabled(false);
+
 
         //</editor-fold>
 
