@@ -31,8 +31,6 @@ public class TestCase14 extends AppCompatActivity {
     EditText fieldAdress1;
     EditText fieldAdress2;
     Button buttonLockIn1;
-    Button buttonLockIn2;
-    Button buttonLockIn3;
     Button buttonSearchId4;
     String id;
     String name;
@@ -61,8 +59,6 @@ public class TestCase14 extends AppCompatActivity {
 
 
         buttonLockIn1 = (Button) findViewById(R.id.id_button_lockin1);
-        buttonLockIn2 = (Button) findViewById(R.id.id_button_lockin2);
-        buttonLockIn3 = (Button) findViewById(R.id.id_button_lockin3);
         buttonSearchId4 = (Button) findViewById(R.id.id_button_search);
         fieldAdress1 = (EditText) findViewById(R.id.id_field_adress);
         fieldAdress2 = (EditText) findViewById(R.id.id_field_adress2);

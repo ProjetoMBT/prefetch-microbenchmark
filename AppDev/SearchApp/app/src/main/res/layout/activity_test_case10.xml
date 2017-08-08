@@ -68,40 +68,22 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lock in 2"
-            android:layout_below="@+id/id_TIL_field3"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/id_button_lockin2"
-            />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="Lock in 1"
             android:layout_below="@+id/id_TIL_field3"
-            android:layout_toLeftOf="@+id/id_button_lockin2"
+            android:layout_centerHorizontal="true"
             android:id="@+id/id_button_lockin1"
             />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Lock in 3"
-            android:layout_toRightOf="@+id/id_button_lockin2"
-            android:layout_below="@+id/id_TIL_field3"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/id_button_lockin3"
-            />
+
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Search"
-            android:layout_below="@+id/id_button_lockin2"
+            android:layout_below="@+id/id_button_lockin1"
             android:layout_centerHorizontal="true"
             android:id="@+id/id_button_search"
             />
-
 
     </RelativeLayout>
 
