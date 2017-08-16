@@ -33,9 +33,7 @@ public class TestCase5 extends AppCompatActivity {
     Button buttonSearchId4;
 
     String id;
-    String nameURL;
     String idURL;
-    String apiKey;
     String urlJson;
     Intent intent;
     Search search;
@@ -51,9 +49,8 @@ public class TestCase5 extends AppCompatActivity {
         //<editor-fold desc="Setting up the attributes">
         intent = new Intent(this, ResultActivity.class);
 
-        nameURL = "http://api.openweathermap.org/data/2.5/weather?units=Imperial&q="; //provisório
-        idURL = "http://api.openweathermap.org/data/2.5/weather?units=Imperial&id=";  //provisório
-        apiKey = "&APPID=f46f62442611cdc087b629f6e87c7374";                           //provisório
+        idURL = "https://radiant-gorge-51458.herokuapp.com/restaurants/";
+
 
         field3 = (EditText) findViewById(R.id.id_fieldID);
         field4 = (EditText) findViewById(R.id.id_fieldID2);
@@ -67,7 +64,7 @@ public class TestCase5 extends AppCompatActivity {
             public void onClick(View view) {
                 id = field3.getText().toString();
 
-                urlJson = idURL + id + apiKey;
+                urlJson = idURL + id;
             }
         });
 
@@ -77,7 +74,7 @@ public class TestCase5 extends AppCompatActivity {
                 {
                     id = field4.getText().toString();
 
-                    urlJson = idURL + id + apiKey;
+                    urlJson = idURL + id;
                 }
 
                 try {

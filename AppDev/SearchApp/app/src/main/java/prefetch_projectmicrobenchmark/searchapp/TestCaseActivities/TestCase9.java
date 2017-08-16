@@ -72,11 +72,17 @@ public class TestCase9 extends AppCompatActivity {
             public void onClick(View view) {
                 adress = fieldAdress.getText().toString();
                 name = fieldName.getText().toString();
+                if(adress.charAt(adress.length()-1)==' '){
+                    adress = adress.substring(0,adress.length()-1);
+                }
 
-                urlJson = nameURL+name+"&"+adress+apiKey;
+                if(name.charAt(name.length()-1)==' '){
+                    name = name.substring(0,name.length()-1);
+                }
+                urlJson = nameURL+name+apiKey+adress;
 
                 try {
-                    url = new URL(urlJson);
+                    url = new URL(urlJson.replace(" ",""));
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 }

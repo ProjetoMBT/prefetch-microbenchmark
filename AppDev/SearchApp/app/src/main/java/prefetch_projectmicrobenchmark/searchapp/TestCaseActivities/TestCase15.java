@@ -40,7 +40,6 @@ public class TestCase15 extends AppCompatActivity {
     String name;
     String adress;
     String nameURL;
-    String idURL;
     String apiKey;
     String urlJson;
     Intent intent;
@@ -56,11 +55,8 @@ public class TestCase15 extends AppCompatActivity {
         //<editor-fold desc="Setting up the attributes">
         intent = new Intent(this, ResultActivity.class);
 
-        nameURL = "http://api.openweathermap.org/data/2.5/weather?units=Imperial&q="; //provisório
-        idURL = "http://api.openweathermap.org/data/2.5/weather?units=Imperial&id=";  //provisório
-        apiKey = "&APPID=f46f62442611cdc087b629f6e87c7374";                           //provisório
-
-
+        nameURL = "https://radiant-gorge-51458.herokuapp.com/restaurants/?name=";
+        apiKey = "&address=";
         buttonLockIn1 = (Button) findViewById(R.id.id_button_lockin1);
         buttonLockIn2 = (Button) findViewById(R.id.id_button_lockin2);
         buttonLockIn3 = (Button) findViewById(R.id.id_button_lockin3);
@@ -108,11 +104,18 @@ public class TestCase15 extends AppCompatActivity {
                     if(adress.equals(""))
                         adress = fieldAdress1.getText().toString();
                 }
+                if(adress.charAt(adress.length()-1)==' '){
+                    adress = adress.substring(0,adress.length()-1);
+                }
 
-                urlJson = nameURL+name+"&"+adress+apiKey;
+                if(name.charAt(name.length()-1)==' '){
+                    name = name.substring(0,name.length()-1);
+                }
+
+                urlJson = nameURL+name+apiKey+adress;
 
                 try {
-                    url = new URL(urlJson);
+                    url = new URL(urlJson.replace(" ",""));
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 }

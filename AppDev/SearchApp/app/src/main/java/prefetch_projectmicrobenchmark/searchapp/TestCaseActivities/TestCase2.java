@@ -32,9 +32,7 @@ public class TestCase2 extends AppCompatActivity {
     Button buttonLockIn3;
     Button buttonSearchId4;
     String id;
-    String nameURL;
     String idURL;
-    String apiKey;
     String urlJson;
     Intent intent;
     Search search;
@@ -50,9 +48,7 @@ public class TestCase2 extends AppCompatActivity {
         //<editor-fold desc="Setting up the attributes">
         intent = new Intent(this, ResultActivity.class);
 
-        nameURL = "http://api.openweathermap.org/data/2.5/weather?units=Imperial&q="; //provisório
-        idURL = "http://api.openweathermap.org/data/2.5/weather?units=Imperial&id=";  //provisório
-        apiKey = "&APPID=f46f62442611cdc087b629f6e87c7374";                           //provisório
+        idURL = "https://radiant-gorge-51458.herokuapp.com/restaurants/";
 
         field3 = (EditText) findViewById(R.id.id_fieldID);
         buttonLockIn1 = (Button) findViewById(R.id.id_button_lockin1);
@@ -67,7 +63,7 @@ public class TestCase2 extends AppCompatActivity {
             public void onClick(View view) {
                 id = field3.getText().toString();
 
-                urlJson = idURL + id + apiKey;
+                urlJson = idURL + id;
 
                 buttonSearchId4.setEnabled(true);
             }
@@ -84,7 +80,7 @@ public class TestCase2 extends AppCompatActivity {
 
         buttonLockIn3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                urlJson = idURL+getID()+apiKey;
+                urlJson = idURL+getID();
 
                 buttonSearchId4.setEnabled(true);
             }
@@ -144,6 +140,7 @@ public class TestCase2 extends AppCompatActivity {
             try {
                 if(result.containsKey("json")){
                     //insere o JSON na INTENT
+
                     intent.putExtra("json", result.get("json"));
                 }
 
@@ -162,7 +159,7 @@ public class TestCase2 extends AppCompatActivity {
     }
 
     public void secondSet(String id){
-        urlJson = idURL+id+apiKey;
+        urlJson = idURL+id;
     }
 
 

@@ -46,17 +46,20 @@ public class ResultActivity extends AppCompatActivity {
         if(json != null){
 
             try {
+
+                json=json.substring(1,json.length());
                 //recebe o JSON vindo da outra INTENT.
                 jsonObject = new JSONObject(json);
 
 
+
                 //tem que mudar as strings, para restaurant_id, name, cuisine, adress.street, adress.zipcode e borough.
-                result1.setText(jsonObject.getString("id"));
+                result1.setText(jsonObject.getString("restaurant_id"));
                 result2.setText(jsonObject.getString("name"));
-                result3.setText(jsonObject.getString("base"));
-                result4.setText(jsonObject.getJSONObject("main").getString("temp"));
-                result5.setText(jsonObject.getJSONArray("weather").getJSONObject(0).getString("main"));
-                result6.setText(jsonObject.getJSONObject("main").getString("humidity"));
+                result3.setText(jsonObject.getString("cuisine"));
+                result4.setText(jsonObject.getJSONObject("address").getString("street"));
+                result5.setText(jsonObject.getJSONObject("address").getString("zipcode"));
+                result6.setText(jsonObject.getString("borough"));
 
 
             } catch (JSONException e) {
