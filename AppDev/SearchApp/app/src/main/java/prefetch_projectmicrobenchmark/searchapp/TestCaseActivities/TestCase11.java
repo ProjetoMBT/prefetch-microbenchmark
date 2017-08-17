@@ -60,7 +60,7 @@ public class TestCase11 extends AppCompatActivity {
         fieldAdress1 = (EditText) findViewById(R.id.id_field_adress);
         fieldAdress2 = (EditText) findViewById(R.id.id_field_adress2);
         fieldName = (EditText) findViewById(R.id.id_field_name);
-        buttonSearchId4.setEnabled(false);
+        buttonSearchId4.setEnabled(true);
 
         //</editor-fold>
 

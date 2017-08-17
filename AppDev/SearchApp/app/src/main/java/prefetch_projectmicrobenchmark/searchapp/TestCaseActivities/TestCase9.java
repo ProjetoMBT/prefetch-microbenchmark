@@ -29,13 +29,11 @@ public class TestCase9 extends AppCompatActivity {
     //<editor-fold desc="Defining the attributes">
     EditText fieldName;
     EditText fieldAdress;
-    Button buttonLockIn1;
     Button buttonSearchId4;
     String id;
     String name;
     String adress;
     String nameURL;
-    String idURL;
     String apiKey;
     String urlJson;
     Intent intent;
@@ -51,17 +49,14 @@ public class TestCase9 extends AppCompatActivity {
         //<editor-fold desc="Setting up the attributes">
         intent = new Intent(this, ResultActivity.class);
 
-        nameURL = "http://api.openweathermap.org/data/2.5/weather?units=Imperial&q="; //provisório
-        idURL = "http://api.openweathermap.org/data/2.5/weather?units=Imperial&id=";  //provisório
-        apiKey = "&APPID=f46f62442611cdc087b629f6e87c7374";                           //provisório
+        nameURL = "https://radiant-gorge-51458.herokuapp.com/restaurants/?name=";
+        apiKey = "&address=";
 
-
-        buttonLockIn1 = (Button) findViewById(R.id.id_button_lockin1);
         buttonSearchId4 = (Button) findViewById(R.id.id_button_search);
         fieldAdress = (EditText) findViewById(R.id.id_field_adress);
         fieldName = (EditText) findViewById(R.id.id_field_name);
 
-        buttonSearchId4.setEnabled(false);
+        buttonSearchId4.setEnabled(true);
 
 
         //</editor-fold>
@@ -72,6 +67,7 @@ public class TestCase9 extends AppCompatActivity {
             public void onClick(View view) {
                 adress = fieldAdress.getText().toString();
                 name = fieldName.getText().toString();
+
                 if(adress.charAt(adress.length()-1)==' '){
                     adress = adress.substring(0,adress.length()-1);
                 }
@@ -89,7 +85,6 @@ public class TestCase9 extends AppCompatActivity {
                 search = new Search();
                 search.execute(url);
 
-                buttonSearchId4.setEnabled(false);
             }
         });
 

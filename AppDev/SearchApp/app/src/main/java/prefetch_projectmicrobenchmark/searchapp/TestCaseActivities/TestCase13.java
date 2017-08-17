@@ -30,8 +30,7 @@ public class TestCase13 extends AppCompatActivity {
     EditText fieldName;
     EditText fieldAdress1;
     EditText fieldAdress2;
-    Button buttonLockIn1;
-    Button buttonLockIn2;
+
     Button buttonLockIn3;
     Button buttonSearchId4;
     String id;
@@ -57,7 +56,7 @@ public class TestCase13 extends AppCompatActivity {
         apiKey = "&address=";
 
 
-        buttonLockIn3 = (Button) findViewById(R.id.id_button_lockin3);
+        buttonLockIn3 = (Button) findViewById(R.id.id_button_lockin1);
         buttonSearchId4 = (Button) findViewById(R.id.id_button_search);
         fieldAdress1 = (EditText) findViewById(R.id.id_field_adress);
         fieldAdress2 = (EditText) findViewById(R.id.id_field_adress2);
@@ -68,7 +67,7 @@ public class TestCase13 extends AppCompatActivity {
 
 
         //<editor-fold desc="Button to search with 2 parameters, name and adress">
-        buttonLockIn1.setOnClickListener(new View.OnClickListener() {
+        buttonLockIn3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
 
 

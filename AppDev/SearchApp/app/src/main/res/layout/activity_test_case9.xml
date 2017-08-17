@@ -48,22 +48,13 @@
                 android:id="@+id/id_field_adress"/>
         </android.support.design.widget.TextInputLayout>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Lock in 1"
-            android:layout_below="@+id/id_TIL_field2"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/id_button_lockin1"
-            />
-
 
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Search"
-            android:layout_below="@+id/id_button_lockin1"
+            android:layout_below="@+id/id_TIL_field2"
             android:layout_centerHorizontal="true"
             android:id="@+id/id_button_search"
             />
